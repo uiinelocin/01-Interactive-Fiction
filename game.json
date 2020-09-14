@@ -1,0 +1,378 @@
+{
+  "passages": [
+    {
+      "text": "Alarm clock is ringing loudly. \nYou open your eyes, check your phone.  \n(current-time:)\nIt’s time to get up.\nToday is January 11, 3030.\nTen years ago, the outbreak of C virus disrupted people’s lives and works. C virus has extremely strong infectious capacity and lethality, and because of its genetic variability, there is no any effective antidotes that have been developed so far. People have learned how to coexist with the C virus right now.\n\n[[Go shopping->shop]]\n[[Go to the hospital->hospital]]\n[[Do nothing->home]]",
+      "links": [
+        {
+          "name": "Go shopping",
+          "link": "shop",
+          "pid": "2"
+        },
+        {
+          "name": "Go to the hospital",
+          "link": "hospital",
+          "pid": "3"
+        },
+        {
+          "name": "Do nothing",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Home",
+      "pid": "1",
+      "position": {
+        "x": "526",
+        "y": "2"
+      }
+    },
+    {
+      "text": "(set: $cash = 200)\n(set: $FMcount = 0)\n(set: $Wcount = 0)\n(set: $TPcount = 0)\nYou enter a grocery store.\nCash: (print: (text: $cash)+\"$\")\nCart: \nFace Masks x(print: $FMcount), \nWater x(print: $Wcount), \nToilet Paper x(print: $TPcount).\n\n[[Buy Face Masks(5 pack) $20]]\n[[Buy Water(24 count) $25]]\n[[Buy Toilet Paper(24 count) $25]]\n[[Leave->street]]",
+      "links": [
+        {
+          "name": "Buy Face Masks(5 pack) $20",
+          "link": "Buy Face Masks(5 pack) $20",
+          "pid": "5"
+        },
+        {
+          "name": "Buy Water(24 count) $25",
+          "link": "Buy Water(24 count) $25",
+          "pid": "7"
+        },
+        {
+          "name": "Buy Toilet Paper(24 count) $25",
+          "link": "Buy Toilet Paper(24 count) $25",
+          "pid": "8"
+        },
+        {
+          "name": "Leave",
+          "link": "street",
+          "pid": "6"
+        }
+      ],
+      "name": "shop",
+      "pid": "2",
+      "position": {
+        "x": "217",
+        "y": "73"
+      }
+    },
+    {
+      "text": "Even though you don't feel sick recently, you still want to do the antibody test in case. \nFortunately, you receive the negative certificate.\n\n[[Go shopping->shop]]\n[[Go Home->home]]",
+      "links": [
+        {
+          "name": "Go shopping",
+          "link": "shop",
+          "pid": "2"
+        },
+        {
+          "name": "Go Home",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "hospital",
+      "pid": "3",
+      "position": {
+        "x": "457",
+        "y": "197"
+      }
+    },
+    {
+      "text": "You return your home, stay chill, and survive another day.",
+      "name": "home",
+      "pid": "4",
+      "position": {
+        "x": "760",
+        "y": "225"
+      }
+    },
+    {
+      "text": "(if: $cash - 20 < 0)  \n[(print: \"You can't afford it!\")]\n(else:)\n[(set: $cash to $cash - 20)\n(set: $FMcount to $FMcount + 5)]\n\nCash: (print: (text: $cash)+\"$\")\nCart: \nFace Masks x(print: $FMcount), \nWater x(print: $Wcount), \nToilet Paper x(print: $TPcount).\n\n[[Buy Face Masks(5 pack) $20]]\n[[Buy Water(24 count) $25]]\n[[Buy Toilet Paper(24 count) $25]]\n[[Leave->street]]",
+      "links": [
+        {
+          "name": "Buy Face Masks(5 pack) $20",
+          "link": "Buy Face Masks(5 pack) $20",
+          "pid": "5"
+        },
+        {
+          "name": "Buy Water(24 count) $25",
+          "link": "Buy Water(24 count) $25",
+          "pid": "7"
+        },
+        {
+          "name": "Buy Toilet Paper(24 count) $25",
+          "link": "Buy Toilet Paper(24 count) $25",
+          "pid": "8"
+        },
+        {
+          "name": "Leave",
+          "link": "street",
+          "pid": "6"
+        }
+      ],
+      "name": "Buy Face Masks(5 pack) $20",
+      "pid": "5",
+      "position": {
+        "x": "0",
+        "y": "323"
+      }
+    },
+    {
+      "text": "You are walking down the street. \nDue to the C virus pandemic, you haven't been outside for a while.\nYou really enjoy the sunshine, the fresh air, and the smell of fresh baked bread, so you decide:\n\n[[Go to the park->Park]]\n[[Go to a Bakery shop->Bakery Shop]]\n[[Go to the Gym->Gym]]",
+      "links": [
+        {
+          "name": "Go to the park",
+          "link": "Park",
+          "pid": "9"
+        },
+        {
+          "name": "Go to a Bakery shop",
+          "link": "Bakery Shop",
+          "pid": "10"
+        },
+        {
+          "name": "Go to the Gym",
+          "link": "Gym",
+          "pid": "11"
+        }
+      ],
+      "name": "street",
+      "pid": "6",
+      "position": {
+        "x": "129",
+        "y": "512"
+      }
+    },
+    {
+      "text": "(if: $cash - 25 < 0)  \n[(print: \"You can't afford it!\")]\n(else:)\n[(set: $cash to $cash - 25)\n(set: $Wcount to $Wcount + 24)]\n\nCash: (print: (text: $cash)+\"$\")\nCart: \nFace Masks x(print: $FMcount), \nWater x(print: $Wcount), \nToilet Paper x(print: $TPcount).\n\n[[Buy Face Masks(5 pack) $20]]\n[[Buy Water(24 count) $25]]\n[[Buy Toilet Paper(24 count) $25]]\n[[Leave->street]]",
+      "links": [
+        {
+          "name": "Buy Face Masks(5 pack) $20",
+          "link": "Buy Face Masks(5 pack) $20",
+          "pid": "5"
+        },
+        {
+          "name": "Buy Water(24 count) $25",
+          "link": "Buy Water(24 count) $25",
+          "pid": "7"
+        },
+        {
+          "name": "Buy Toilet Paper(24 count) $25",
+          "link": "Buy Toilet Paper(24 count) $25",
+          "pid": "8"
+        },
+        {
+          "name": "Leave",
+          "link": "street",
+          "pid": "6"
+        }
+      ],
+      "name": "Buy Water(24 count) $25",
+      "pid": "7",
+      "position": {
+        "x": "258",
+        "y": "261"
+      }
+    },
+    {
+      "text": "(if: $cash - 25 < 0)  \n[(print: \"You can't afford it!\")]\n(else:)\n[(set: $cash to $cash - 25)\n(set: $TPcount to $TPcount + 24)]\n\nCash: (print: (text: $cash)+\"$\")\nCart: \nFace Masks x(print: $FMcount), \nWater x(print: $Wcount), \nToilet Paper x(print: $TPcount).\n\n[[Buy Face Masks(5 pack) $20]]\n[[Buy Water(24 count) $25]]\n[[Buy Toilet Paper(24 count) $25]]\n[[Leave->street]]",
+      "links": [
+        {
+          "name": "Buy Face Masks(5 pack) $20",
+          "link": "Buy Face Masks(5 pack) $20",
+          "pid": "5"
+        },
+        {
+          "name": "Buy Water(24 count) $25",
+          "link": "Buy Water(24 count) $25",
+          "pid": "7"
+        },
+        {
+          "name": "Buy Toilet Paper(24 count) $25",
+          "link": "Buy Toilet Paper(24 count) $25",
+          "pid": "8"
+        },
+        {
+          "name": "Leave",
+          "link": "street",
+          "pid": "6"
+        }
+      ],
+      "name": "Buy Toilet Paper(24 count) $25",
+      "pid": "8",
+      "position": {
+        "x": "44",
+        "y": "127"
+      }
+    },
+    {
+      "text": "You go jogging in the park for an hour. \nYou feel pretty relax for embracing the nature.\nYou feel a little bit exhausted and thirsty.\n\n[[Go to Starbucks->Starbucks]]\n[[Go Home->home]]",
+      "links": [
+        {
+          "name": "Go to Starbucks",
+          "link": "Starbucks",
+          "pid": "12"
+        },
+        {
+          "name": "Go Home",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Park",
+      "pid": "9",
+      "position": {
+        "x": "0",
+        "y": "662"
+      }
+    },
+    {
+      "text": "(if: $cash <=0)\n[You enter a bakery shop.\nThe smell of baked bread makes you feel extremely hungry.\nYou wanna buy some bread but you have no cash left.\nSo you have to [[go home->home]].]\nYou enter a bakery shop.\nCash: (print: (text: $cash)+\"$\")\n[[Buy Red Velvet $25]]\n[[Buy Krwasani $15]]\n[[Buy Tiramisu $20]]\n[[Buy Baguette $20]]\n[[Leave->home]]",
+      "links": [
+        {
+          "name": "go home",
+          "link": "home",
+          "pid": "4"
+        },
+        {
+          "name": "Buy Red Velvet $25",
+          "link": "Buy Red Velvet $25",
+          "pid": "13"
+        },
+        {
+          "name": "Buy Krwasani $15",
+          "link": "Buy Krwasani $15",
+          "pid": "14"
+        },
+        {
+          "name": "Buy Tiramisu $20",
+          "link": "Buy Tiramisu $20",
+          "pid": "15"
+        },
+        {
+          "name": "Buy Baguette $20",
+          "link": "Buy Baguette $20",
+          "pid": "16"
+        },
+        {
+          "name": "Leave",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Bakery Shop",
+      "pid": "10",
+      "position": {
+        "x": "128",
+        "y": "662"
+      }
+    },
+    {
+      "text": "You plan to do some anaerobic exercises and aerobic exercise.\nHowever, you get tired easily since you don't engage in regular exerice these days.\nAnd you feel thirsty.\n\n[[Go to Starbucks->Starbucks]]\n[[Go Home->home]]",
+      "links": [
+        {
+          "name": "Go to Starbucks",
+          "link": "Starbucks",
+          "pid": "12"
+        },
+        {
+          "name": "Go Home",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Gym",
+      "pid": "11",
+      "position": {
+        "x": "277",
+        "y": "661"
+      }
+    },
+    {
+      "text": "You enter the Starbucks and order a Iced Green Tea Lemonade.\n\"Ok, a venti size Iced Green Tea Lemonade, and what's your name?\"\n(set: $name to (prompt: \"Please Enter Your Name:\", \"\"))\nAfter 5 mintues, you get your drink with (print: $name) on it.\n[[Leave->home]]",
+      "links": [
+        {
+          "name": "Leave",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Starbucks",
+      "pid": "12",
+      "position": {
+        "x": "355",
+        "y": "811"
+      }
+    },
+    {
+      "text": "(if: $cash - 25 < 0)  \n[(print: \"You can't afford it!\")]\n(else:)\n[(set: $cash to $cash - 25)]\n\nCash: (print: (text: $cash)+\"$\")\n\nYou buy and eat the red velvet cake.\n[[Leave->home]]",
+      "links": [
+        {
+          "name": "Leave",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Buy Red Velvet $25",
+      "pid": "13",
+      "position": {
+        "x": "0",
+        "y": "888"
+      }
+    },
+    {
+      "text": "(if: $cash - 15 < 0)  \n[(print: \"You can't afford it!\")]\n(else:)\n[(set: $cash to $cash - 15)]\n\nCash: (print: (text: $cash)+\"$\")\n\nYou buy and eat the Krwasani.\n[[Leave->home]]",
+      "links": [
+        {
+          "name": "Leave",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Buy Krwasani $15",
+      "pid": "14",
+      "position": {
+        "x": "126",
+        "y": "822"
+      }
+    },
+    {
+      "text": "(if: $cash - 20 < 0)  \n[(print: \"You can't afford it!\")]\n(else:)\n[(set: $cash to $cash - 20)]\n\nCash: (print: (text: $cash)+\"$\")\n\nYou buy and eat the tiramisu.\n[[Leave->home]]",
+      "links": [
+        {
+          "name": "Leave",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Buy Tiramisu $20",
+      "pid": "15",
+      "position": {
+        "x": "178",
+        "y": "971"
+      }
+    },
+    {
+      "text": "(if: $cash - 20 < 0)  \n[(print: \"You can't afford it!\")]\n(else:)\n[(set: $cash to $cash - 20)]\n\nCash: (print: (text: $cash)+\"$\")\n\nYou buy and eat the Baguette.\n[[Leave->home]]",
+      "links": [
+        {
+          "name": "Leave",
+          "link": "home",
+          "pid": "4"
+        }
+      ],
+      "name": "Buy Baguette $20",
+      "pid": "16",
+      "position": {
+        "x": "329",
+        "y": "978"
+      }
+    }
+  ],
+  "name": "Project01",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.9",
+  "ifid": "4A83906B-CF1F-44FD-811C-4EFE019A0911"
+}
